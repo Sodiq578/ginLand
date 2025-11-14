@@ -320,7 +320,7 @@ footer {
     width: fit-content;   
     margin: 0 auto;       /* markazga joylashadi */
     /* ichki bo‘sh joy */
-    border-radius: 12px;  /* xohlasa burchaklarni yumaloqlash */
+    border-radius: 12px;   
     margin-top: 50px;
 }
 
