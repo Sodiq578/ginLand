@@ -76,10 +76,9 @@
     <footer>
         <div class="footer-box">
             <h2>Madina Junaydullayevna</h2>
-
             <a href="tel:+9989390688766">+998 (93) 068 87 66</a>
 
-            <button class="footer-btn-telegram" onclick="window.location.href='https://t.me/yourusername'">
+            <button class="footer-btn-telegram" onclick="goToTelegram()">
                 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram Icon">
                 Telegramdan bog'lanish
             </button>
@@ -97,19 +96,26 @@
         <div class="modal-content">
             <h3>Ro‘yxatdan o‘tish</h3>
             <p>Iltimos, ismingiz va telefon raqamingizni kiriting:</p>
-           <input type="text" id="userName" placeholder="Ismingiz" required>
-<input type="tel" id="userPhone" placeholder="+998 __ ___ __ __" required>
-           <!-- <input type="tel" maxlength="13"> -->
+            <input type="text" id="userName" placeholder="Ismingiz" required>
+            <input type="tel" id="userPhone" placeholder="+998 __ ___ __ __" required>
+            <div id="recaptcha-container"></div>
             <button class="modal-btn" onclick="completeRegistration()">Ro‘yxatdan o‘tish</button>
         </div>
     </div>
 
-    <!-- 1 QADAM QOLDI MODAL -->
+    <!-- FINAL MODAL -->
     <div class="modal" id="finalModal">
         <div class="modal-content">
             <h3>1 qadam qoldi!</h3>
             <p>Marafon boshlanishiga oz qoldi. Telegram kanalga o‘ting!</p>
             <button class="modal-btn final-btn" onclick="goToTelegram()">Telegram kanalga o‘tish</button>
+        </div>
+    </div>
+
+    <!-- LOADING MODAL -->
+    <div class="modal" id="loadingModal">
+        <div class="modal-content">
+            <h3>Yuklanmoqda...</h3>
         </div>
     </div>
 

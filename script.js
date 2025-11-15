@@ -25,10 +25,9 @@ function updateTimer() {
 const interval = setInterval(updateTimer, 1000);
 updateTimer();
 
-
-// ================= TELEFON MASK (avto format) =================
+// ================= TELEFON MASK =================
 document.getElementById('userPhone').addEventListener('input', function (e) {
-    let value = e.target.value.replace(/[^\d]/g, ''); // Faqat raqamlar
+    let value = e.target.value.replace(/[^\d]/g, '');
     if (value.startsWith('998')) value = value.substring(3);
     if (value.length > 9) value = value.substring(0, 9);
 
@@ -41,8 +40,7 @@ document.getElementById('userPhone').addEventListener('input', function (e) {
     e.target.value = formatted;
 });
 
-
-// ================= MODAL OCHISH / YOPISH =================
+// ================= MODAL =================
 function openModal(modalId) {
     document.getElementById(modalId).style.display = "flex";
 }
@@ -51,42 +49,45 @@ function closeModal(modalId) {
     document.getElementById(modalId).style.display = "none";
 }
 
-// Barcha "RO‘YXATDAN O‘TISH" tugmalariga
 document.querySelectorAll('.btn').forEach(btn => {
     btn.onclick = () => openModal('registerModal');
 });
 
+window.onclick = function(event) {
+    document.querySelectorAll('.modal').forEach(modal => {
+        if(event.target === modal) modal.style.display = "none";
+    });
+}
 
-// ================= GOOGLE SHEETS GA YUBORISH =================
+// ================= TELEGRAM =================
+function goToTelegram() {
+    window.location.href = "https://t.me/+XLq4LXLQudxiZmQ6";
+}
+
+// ================= GOOGLE SHEETS =================
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyol0tp71woGCtJma4LD_wnp0epomoAQsE3DGhh6zHgIj_r6ry_YPRpiR6KOSeOqPuC/exec";
 
 function completeRegistration() {
     const nameInput = document.getElementById('userName');
     const phoneInput = document.getElementById('userPhone');
-
     const name = nameInput.value.trim();
-    let phone = phoneInput.value.trim();
-
-    // 1. Telefonni tozalash
-    phone = phone.replace(/[^\d]/g, ''); // Faqat raqamlar
-    if (phone.startsWith('998')) phone = phone.substring(3);
-    if (phone.length !== 9 || !/^\d+$/.test(phone)) {
-        alert("Iltimos, to‘g‘ri telefon raqam kiriting!\nMasalan: +998 90 123 45 67");
+    let phone = phoneInput.value.replace(/[^\d]/g, '');
+    if(phone.startsWith('998')) phone = phone.substring(3);
+    if(phone.length !== 9 || !/^\d+$/.test(phone)) {
+        alert("Telefon: 9 ta raqam kiriting!");
         phoneInput.focus();
         return;
     }
-
-    // 2. To‘g‘ri format
     phone = '+998' + phone;
-
-    // 3. Ism tekshiruvi
-    if (!name || name.length < 2) {
+    if(!name || name.length < 2) {
         alert("Iltimos, to‘g‘ri ism kiriting!");
         nameInput.focus();
         return;
     }
 
-    // 4. FORM-DATA SIFATIDA YUBORISH (Apps Script uchun to‘g‘ri usul)
+    closeModal('registerModal');
+    document.getElementById('loadingModal').style.display = "flex";
+
     const formData = new URLSearchParams();
     formData.append('name', name);
     formData.append('phone', phone);
@@ -95,31 +96,12 @@ function completeRegistration() {
         method: 'POST',
         mode: 'no-cors',
         body: formData
-    })
-    .then(() => {
-        closeModal('registerModal');
+    }).then(() => {
+        closeModal('loadingModal');
         openModal('finalModal');
-    })
-    .catch(err => {
-        console.warn("Yuborishda xato (lekin davom etamiz):", err);
-        closeModal('registerModal');
+    }).catch(err => {
+        console.warn(err);
+        closeModal('loadingModal');
         openModal('finalModal');
     });
 }
-
-
-// ================= TELEGRAMGA O‘TISH =================
-function goToTelegram() {
-    window.location.href = "https://t.me/+XLq4LXLQudxiZmQ6";
-}
-
-
-// ================= MODAL TASHQARIDAN BOSISH =================
-window.onclick = function(event) {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-};
