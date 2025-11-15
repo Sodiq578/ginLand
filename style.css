@@ -11,6 +11,14 @@ body {
     text-align: center;
 }
 
+.container {
+    display: flex;
+    flex-direction: column; /* to'g'ri yozilishi */
+    margin: 0 auto;         /* to'g'ri yozilishi */
+    max-width: 420px;       /* mobil uchun cheklov */
+    padding: 0 15px;        /* ixtiyoriy: ichki bo'shliq */
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
 
 .date-box {
@@ -44,7 +52,7 @@ body {
     font-size: 16px;
     margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
-    
+    font-weight: 700;
     display: -webkit-box;        /* Flexga o‘xshash blok */
     -webkit-line-clamp: 2;       /* Maksimal 2 qator */
  
@@ -53,13 +61,14 @@ body {
 
 /* p tagini qalinroq qilish, span ta’sir qilmasligi uchun */
 .subtitle p {
-    font-weight: 600;            /* Semibold qalinlik */
+    font-weight: 700;            /* Semibold qalinlik */
     margin: 0;                   /* Agar kerak bo‘lsa */
 }
 
 .subtitle span {
     color: #d10000;
     font-weight: normal;         /* Span qalinligini asl holatda qoldiramiz */
+    font-weight: 700;
 }
 
 
@@ -70,7 +79,7 @@ body {
 }
 
 .doctor img {
-    width: 270px;
+    width: 250px;
 }
 
 /* Montserrat shriftini Google Fonts orqali ulash */
@@ -136,7 +145,7 @@ body {
     background: #B91C1B;
     color: #fff;
     padding: 24px 28px;
-    width: 290px; 
+    width: 270px; 
     max-width: 320px;
     font-size: 18px;
     border: none;
@@ -195,8 +204,8 @@ body {
 
 /* Sarlavha */
 .bepul-header {
-    font-size: 15px;
-    font-weight: 500; /* Medium */
+    font-size: 18px;
+    font-weight: 700; /* Medium */
     margin-bottom: 20px;
     color: #000;
 }
@@ -219,7 +228,7 @@ body {
 /* Umumiy labellar uchun (3 qator, uch nuqta) */
 .option-text,
 .first-option-text {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500; /* Medium */
     cursor: pointer;
     color: #333;
@@ -414,3 +423,151 @@ font-size: 14px;
     max-width: 100%;
     font-size: 14px;
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MODAL STYLES */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 380px;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    font-family: 'Montserrat', sans-serif;
+    border: 2px solid #B91C1B;
+}
+
+.modal-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 15px;
+    color: #000;
+}
+
+.modal-content p {
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 20px;
+    line-height: 1.5;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+.modal-btn {
+    background: #B91C1B;
+    color: #fff;
+    padding: 16px 20px;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-bottom: 4px solid #4c080b;
+    transition: all 0.2s;
+}
+
+.modal-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+.final-btn {
+    background: #25D366;
+    border-bottom: 4px solid #128C7E;
+}
+
+.final-btn:hover {
+    background: #128C7E;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Telegram tugma yangi dizayn (original gradient) */
+.footer-btn-telegram {
+    background: linear-gradient(135deg, #52c0f5 0%, #1ca0d9 100%);
+
+    color: #fff;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 280px;
+    max-width: 100%;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+    transition: 0.25s ease;
+     
+}
+
+/* Icon styling */
+.footer-btn-telegram img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Hover effekti */
+.footer-btn-telegram:hover {
+    background: linear-gradient(135deg, #52c0f5 0%, #1ca0d9 100%);
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #37aee2 0%, #1e96c8 100%);
+    
+}
