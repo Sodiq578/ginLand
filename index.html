@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="uz">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promo Sahifa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
 
-    <!-- Kritik CSS (Render Blocking oldini olish uchun) -->
+    <!-- Kritik CSS -->
     <style>
         @font-face {
             font-family: 'Montserrat';
@@ -13,199 +16,615 @@
             font-weight: 400 700;
             font-display: swap;
         }
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Montserrat',sans-serif;background:#fff;padding:15px}
-        .container{max-width:420px;margin:auto;display:flex;flex-direction:column}
-        .promo{text-align:center}
-        .date-box{display:inline-block;padding:6px 16px;border:2px solid #B91C1B;border-radius:20px;font-size:14px;margin-bottom:12px;font-weight:600;color:#B91C1B}
-        .title{font-weight:500;font-size:14px;white-space:nowrap;overflow:hidden;margin:8px 0}
-        .subtitle{font-size:16px;font-weight:700;margin:10px 0}
-        .subtitle span{color:#d10000}
-        .doctor{position:relative;display:inline-block}
-        .doctor img{width:250px;border-radius:12px}
-        .doctor-name{position:absolute;bottom:10px;left:70%;transform:translateX(-50%);background:#000;color:#fff;padding:10px;border-radius:30px;font-size:12px;width:160px;border:2px solid #B91C1B}
-        .doctor-name span{font-size:11px;opacity:.8}
-        .price-box-container{border:2px solid #EF4444;border-radius:14px;padding:20px 0;margin-top:-5px}
-        .price-box{display:flex;justify-content:center;align-items:center;gap:25px}
-        .old-price{font-size:20px;text-decoration:line-through;color:#666}
-        .free{font-size:22px;color:red;font-weight:600}
-        .btn{margin:15px auto 0;background:#B91C1B;color:#fff;padding:18px 24px;width:300px;font-size:17px;border:none;border-radius:12px;font-weight:600;cursor:pointer;box-shadow:0 4px 6px rgba(0,0,0,.3);border-bottom:4px solid #4c080b;position:relative;overflow:hidden}
-        .btn:active{transform:translateY(2px);border-bottom:2px solid #4c080b}
-        .pulse{animation:pulse 1.8s infinite}
-        @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(185,28,27,.7)}70%{box-shadow:0 0 0 12px rgba(185,28,27,0)}100%{box-shadow:0 0 0 0 rgba(185,28,27,0)}}
-        .limit-text{margin-top:15px;font-size:12px;color:#666}
-        .timer{margin-top:5px;font-size:30px;font-weight:600;color:#B91C1B}
-        .bepul{margin:35px auto 0;text-align:center}
-        .bepul-header{font-size:17px;font-weight:700;margin-bottom:18px}
-        .options{gap:14px;display:flex;flex-direction:column;margin-bottom:20px}
-        .option{display:flex;align-items:flex-start;line-height:1.5}
-        .yumaloq{width:18px;height:18px;border-radius:50%;border:3px solid #B91C1B;flex-shrink:0;margin-right:10px;margin-top:2px}
-        .option-text,.first-option-text{font-size:13.5px;font-weight:500;color:#333;text-align:left;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-        .free-big{font-size:28px;font-weight:700;margin:18px 0;text-transform:uppercase;color:#B91C1B}
-        .hurry{margin-top:12px;font-size:14px;color:#555}
-        footer{background:#E5E7EB;border-radius:12px;margin-top:40px;padding:18px 0}
-        .footer-box{max-width:420px;margin:auto;text-align:center;padding:0 15px}
-        .footer-box h2{font-size:17px;font-weight:600;margin-bottom:8px}
-        .footer-box a{display:block;font-size:17px;color:#B91C1B;text-decoration:none;margin:8px 0}
-        .footer-btn-telegram{background:linear-gradient(135deg,#52c0f5,#1ca0d9);color:#fff;padding:12px 18px;border:none;border-radius:12px;font-weight:600;cursor:pointer;width:260px;max-width:100%;font-size:13.5px;display:flex;align-items:center;justify-content:center;gap:8px;margin:12px auto}
-        .footer-btn-telegram img{width:18px;height:18px}
-        .footer-box p{font-size:11px;color:#555;line-height:1.4;margin:6px 0}
-        .footer-box p:first-of-type{font-size:10.5px;color:#333;margin-bottom:10px}
-        .footer-box p:last-of-type{font-size:9.5px;color:#888;margin-top:12px}
-        .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.65);justify-content:center;align-items:center;padding:15px;z-index:999}
-        .modal-content{background:#fff;padding:25px 20px;border-radius:14px;text-align:center;max-width:360px;width:100%;box-shadow:0 8px 20px rgba(0,0,0,.3);border:2px solid #B91C1B}
-        .modal-content h3{font-size:19px;font-weight:600;margin-bottom:12px}
-        .modal-content p{font-size:13.5px;color:#333;margin-bottom:18px;line-height:1.5}
-        .modal-content input{width:100%;padding:12px;margin-bottom:12px;border:1px solid #ccc;border-radius:10px;font-size:15px}
-        .modal-btn{background:#B91C1B;color:#fff;padding:14px 18px;width:100%;border:none;border-radius:12px;font-size:17px;font-weight:600;cursor:pointer;box-shadow:0 4px 6px rgba(0,0,0,.3);border-bottom:4px solid #4c080b}
-        .modal-btn:hover{opacity:.95;transform:translateY(-1px)}
-        .final-btn{background:#25D366;border-bottom:4px solid #128C7E}
-        .final-btn:hover{background:#128C7E}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #fff;
+            padding: 15px
+        }
+
+        .container {
+            max-width: 420px;
+            margin: auto;
+            display: flex;
+            flex-direction: column
+        }
+
+        .promo {
+            text-align: center
+        }
+
+        .date-box {
+            display: inline-block;
+            padding: 6px 16px;
+            border: 2px solid #B91C1B;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 12px;
+            font-weight: 400;
+            /* Montserrat Regular */
+            font-family: 'Montserrat', sans-serif;
+            color: black;
+        }
+
+
+        .title {
+            font-weight: 500;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            margin: 8px 0
+        }
+.subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; /* SemiBold */
+}
+.subtitle span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; /* SemiBold */
+}
+
+
+        .subtitle span {
+            color: #d10000
+        }
+
+        .doctor {
+            position: relative;
+            display: inline-block
+        }
+
+        .doctor img {
+            width: 200px;
+            border-radius: 12px
+        }
+
+        .doctor-name {
+            position: absolute;
+            bottom: 10px;
+            left: 70%;
+            transform: translateX(-50%);
+            background: #000;
+            color: #fff;
+            padding: 10px;
+            border-radius: 30px;
+            font-size: 12px;
+            width: 200px;
+            border: 2px solid #B91C1B
+        }
+
+        .doctor-name span {
+            font-size: 11px;
+            opacity: .8
+        }
+
+        .price-box-container {
+            border: 2px solid #EF4444;
+            border-radius: 14px;
+            padding: 20px 0;
+            margin-top: -5px
+        }
+
+        .price-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px
+        }
+
+        .old-price {
+            font-size: 20px;
+            text-decoration: line-through;
+            color: #666
+        }
+
+        .free {
+            font-size: 22px;
+            color: red;
+            font-weight: 600
+        }
+
+        .btn {
+            margin: 15px auto 0;
+            background: #B91C1B;
+            color: #fff;
+            padding: 18px 24px;
+            width: 300px;
+            font-size: 17px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+            border-bottom: 4px solid #4c080b;
+            position: relative;
+            overflow: hidden
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+            border-bottom: 2px solid #4c080b
+        }
+
+        .pulse {
+            animation: pulse 1.8s infinite
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(185, 28, 27, .7)
+            }
+
+            70% {
+                box-shadow: 0 0 0 12px rgba(185, 28, 27, 0)
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(185, 28, 27, 0)
+            }
+        }
+
+        .limit-text {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #666
+        }
+
+        .timer {
+            margin-top: 5px;
+            font-size: 30px;
+            font-weight: 600;
+            color: #B91C1B
+        }
+
+        .bepul {
+            margin: 35px auto 0;
+            text-align: center
+        }
+
+        .bepul-header {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 18px
+        }
+
+        .options {
+            gap: 14px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px
+        }
+
+        .option {
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.5
+        }
+
+        .yumaloq {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 3px solid #B91C1B;
+            flex-shrink: 0;
+            margin-right: 10px;
+            margin-top: 2px
+        }
+
+        .option-text,
+        .first-option-text {
+            font-size: 13.5px;
+            font-weight: 500;
+            color: #333;
+            text-align: left;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden
+        }
+
+        .free-big {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 18px 0;
+            text-transform: uppercase;
+            color: #B91C1B
+        }
+
+        .hurry {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #555
+        }
+
+        footer {
+            background: #E5E7EB;
+            border-radius: 12px;
+            margin-top: 40px;
+            padding: 18px 0
+        }
+
+        .footer-box {
+            max-width: 420px;
+            margin: auto;
+            text-align: center;
+            padding: 0 15px
+        }
+
+        .footer-box h2 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px
+        }
+
+        .footer-box a {
+            display: block;
+            font-size: 17px;
+            color: #B91C1B;
+            text-decoration: none;
+            margin: 8px 0
+        }
+
+        .footer-btn-telegram {
+            background: #0088cc;
+            ;
+            color: #fff;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 260px;
+            max-width: 100%;
+            font-size: 13.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 12px auto
+        }
+
+        .footer-btn-telegram img {
+            width: 18px;
+            height: 18px
+        }
+
+        .footer-box p {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.4;
+            margin: 6px 0
+        }
+
+        .footer-box p:first-of-type {
+            font-size: 10.5px;
+            color: #333;
+            margin-bottom: 10px
+        }
+
+        .footer-box p:last-of-type {
+            font-size: 9.5px;
+            color: #888;
+            margin-top: 12px
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .65);
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            z-index: 999
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 25px 20px;
+            border-radius: 14px;
+            text-align: center;
+            max-width: 360px;
+            width: 100%;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .3);
+            border: 2px solid #B91C1B
+        }
+
+        .modal-content h3 {
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 12px
+        }
+
+        .modal-content p {
+            font-size: 13.5px;
+            color: #333;
+            margin-bottom: 18px;
+            line-height: 1.5
+        }
+
+        .modal-content input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 15px
+        }
+
+        .modal-btn {
+            background: #B91C1B;
+            color: #fff;
+            padding: 14px 18px;
+            width: 100%;
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+            border-bottom: 4px solid #4c080b
+        }
+
+        .modal-btn:hover {
+            opacity: .95;
+            transform: translateY(-1px)
+        }
+
+        .final-btn {
+            background: #0088cc;
+            border: none;
+            border-bottom: 4px solid #005f87;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 20px auto 0;
+            text-decoration: none;
+        }
+
+        .final-btn:hover {
+            background: #006699;
+        }
+
+        .final-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        .telegram-btn {
+            background: #0088cc;
+            /* Telegram blue */
+            border: none;
+            border-bottom: 4px solid #005f87;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            /* Icon bilan matn orasida joy */
+            cursor: pointer;
+            transition: 0.3s ease;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .telegram-btn:hover {
+            background: #006699;
+        }
     </style>
 </head>
+
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- PROMO SECTION -->
-    <div class="promo">
-        <div class="date-box">26–27–28 NOYABR | Soat 20:00 da</div>
-        <p class="title">Siydik tutib tura olmaslik muammosidan qutuling!</p>
-        <p class="subtitle">
-            Yo'talganingizda yoki aksa urganda siydik chiqib ketadimi?
-            <span>Jinsiy hayotda zavq kamayganmi?</span>
-        </p>
+        <!-- PROMO SECTION -->
+        <div class="promo">
+            <div class="date-box">26–27–28 NOYABR | Soat 20:00 da</div>
+            <p class="title">Siydik tutib tura olmaslik muammosidan qutuling!</p>
+            <p class="subtitle">
+                Yo'talganingizda yoki aksa urganda siydik chiqib ketadimi?
+                <span>Jinsiy hayotda zavq kamayganmi?</span>
+            </p>
 
-        <div class="doctor">
-            <img class="doktor-img" src="./images/back3.png" alt="Barno Suleymanova">
-            <div class="doctor-name">
-                Barno Suleymanova <br>
-                <span>9 yillik dietolog</span>
+            <div class="doctor">
+                <img class="doktor-img" src="./images/back3.png" alt="Barno Suleymanova">
+                <div class="doctor-name">
+                    <b>Madina Junaydullayevna</b> <br>
+                    <span>Intim gimnastika bo’yicha coach-trener
+                        5000+ mamnun ayollar</span>
+                </div>
+            </div>
+
+            <div class="price-box-container">
+                <div class="price-box">
+                    <div class="old-price">997,000 so'm</div>
+                    <div class="free">BEPUL</div>
+                </div>
+                <button class="btn pulse">RO‘YXATDAN O‘TISH</button>
+                <p class="limit-text">Shoshiling, joylar soni cheklangan</p>
+                <div class="timer" id="timer">01:59</div>
             </div>
         </div>
 
-        <div class="price-box-container">
-            <div class="price-box">
-                <div class="old-price">997,000 so'm</div>
-                <div class="free">BEPUL</div>
+        <section class="bepul">
+            <div class="bepul-header">3 kunlik BEPUL marafonda siz:</div>
+            <div class="options">
+                <div class="option">
+                    <div class="yumaloq"></div>
+                    <label class="first-option-text"><b>Siyatik tutqazmaslik, qin kengayishi</b> va Kegel mashqlari
+                        sirlarini bilib olasiz</label>
+                </div>
+                <div class="option">
+                    <div class="yumaloq"></div>
+                    <label class="option-text">Matka tushishi va bachadon bilan bog‘liq muammolarga tabiiy yechimlarni
+                        o‘rganasiz</label>
+                </div>
+                <div class="option">
+                    <div class="yumaloq"></div>
+                    <label class="option-text">Orgazm sezmaslik, libido pasayishi va yaqinlikdagi og‘riqlarni hal qilish
+                        usullarini ochasiz</label>
+                </div>
+                <div class="option">
+                    <div class="yumaloq"></div>
+                    <label class="option-text">Ex-xotin munosabatidagi sovuqlikni ildizini o‘rganish orqali iliqlikni
+                        qaytarib, qimmatbaho sovg‘alarga ko‘milish sirlarini o‘rganasiz</label>
+                </div>
             </div>
+            <div class="free-big">BEPUL</div>
             <button class="btn pulse">RO‘YXATDAN O‘TISH</button>
-            <p class="limit-text">Shoshiling, joylar soni cheklangan</p>
-            <div class="timer" id="timer">01:59</div>
+            <div class="hurry">Shoshiling, joylar soni cheklangan</div>
+        </section>
+
+        <footer>
+            <div class="footer-box">
+                <h2>Madina Junaydullayevna</h2>
+                <a href="tel:+9989390688766">+998 (93) 068 87 66</a>
+                <button class="footer-btn-telegram" onclick="goToTelegram()">
+                    <img src="https://cdn-icons-png.flaticon.com/32/2111/2111646.png" alt="Telegram">
+                    Telegramdan bog'lanish
+                </button>
+                <p>“Madina Junaydullayevna” YATT Toshkent shahri, Yashnobod tumani, Parkent ko'chasi 76. H/R 2021 8000
+                    6072 8496 2001 “OFB” MFO: 01071 INN: 207086151”</p>
+                <p>This site is not affiliated with Facebook, Google, or any social media platform. All trademarks
+                    belong to their owners.</p>
+                <p>Copyright 2025® Simona Ladyyfit</p>
+            </div>
+        </footer>
+
+
+        <!-- MODALS -->
+        <!-- Register Modal -->
+        <div class="modal" id="registerModal">
+            <div class="modal-content">
+                <h3>Ro‘yxatdan o‘tish</h3>
+                <p>Iltimos, ismingiz va telefon raqamingizni kiriting:</p>
+                <input type="text" id="userName" placeholder="Ismingiz" required>
+                <input type="tel" id="userPhone" placeholder="+998 __ ___ __ __" required>
+                <button class="modal-btn" onclick="completeRegistration()">Ro‘yxatdan o‘tish</button>
+            </div>
         </div>
+
+        <!-- Loading Modal -->
+        <div class="modal" id="loadingModal">
+            <div class="modal-content">
+                <h3>Yuklanmoqda...</h3>
+            </div>
+        </div>
+
+        <!-- Final Success Modal -->
+        <div class="modal" id="finalModal">
+            <div class="modal-content">
+                <h3>Tabriklaymiz! 🎉</h3>
+                <p>Siz muvaffaqiyatli ro‘yxatdan o‘tdingiz. Tez orada Telegramda xabar keladi!</p>
+                <button class="modal-btn telegram-btn" onclick="goToTelegram()"> <svg xmlns="http://www.w3.org/2000/svg"
+                        width="20" height="20" fill="white" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0C5.372 0 0 5.373 0 12c0 6.628 5.372 12 12 12s12-5.372 12-12c0-6.627-5.372-12-12-12zm5.44 8.176l-1.62 7.636c-.122.54-.443.672-.898.418l-2.49-1.84-1.203 1.16c-.133.133-.243.243-.5.243l.178-2.53 4.607-4.163c.2-.178-.044-.278-.31-.1l-5.69 3.59-2.45-.766c-.532-.166-.543-.532.11-.785l9.576-3.693c.443-.166.832.1.688.765z" />
+                    </svg>
+                    Telegramga o‘tish</button>
+            </div>
+        </div>
+
     </div>
 
-    <section class="bepul">
-        <div class="bepul-header">3 kunlik BEPUL marafonda siz:</div>
-        <div class="options">
-            <div class="option">
-                <div class="yumaloq"></div>
-                <label class="first-option-text"><b>Siyatik tutqazmaslik, qin kengayishi</b> va Kegel mashqlari sirlarini bilib olasiz</label>
-            </div>
-            <div class="option">
-                <div class="yumaloq"></div>
-                <label class="option-text">Matka tushishi va bachadon bilan bog‘liq muammolarga tabiiy yechimlarni o‘rganasiz</label>
-            </div>
-            <div class="option">
-                <div class="yumaloq"></div>
-                <label class="option-text">Orgazm sezmaslik, libido pasayishi va yaqinlikdagi og‘riqlarni hal qilish usullarini ochasiz</label>
-            </div>
-            <div class="option">
-                <div class="yumaloq"></div>
-                <label class="option-text">Ex-xotin munosabatidagi sovuqlikni ildizini o‘rganish orqali iliqlikni qaytarib, qimmatbaho sovg‘alarga ko‘milish sirlarini o‘rganasiz</label>
-            </div>
-        </div>
-        <div class="free-big">BEPUL</div>
-        <button class="btn pulse">RO‘YXATDAN O‘TISH</button>
-        <div class="hurry">Shoshiling, joylar soni cheklangan</div>
-    </section>
+    <script>
+        // Timer
+        let sec = 59, min = 1;
+        const timer = document.getElementById('timer');
+        setInterval(() => {
+            let m = String(min).padStart(2, '0'), s = String(sec).padStart(2, '0');
+            timer.textContent = `${m}:${s}`;
+            if (sec-- === 0) {
+                if (min-- === 0) {
+                    timer.textContent = "00:00";
+                    return;
+                }
+                sec = 59;
+            }
+        }, 1000);
 
-    <footer>
-        <div class="footer-box">
-            <h2>Madina Junaydullayevna</h2>
-            <a href="tel:+9989390688766">+998 (93) 068 87 66</a>
-            <button class="footer-btn-telegram" onclick="goToTelegram()">
-                <img src="https://cdn-icons-png.flaticon.com/32/2111/2111646.png" alt="Telegram">
-                Telegramdan bog'lanish
-            </button>
-            <p>“Madina Junaydullayevna” YATT Toshkent shahri, Yashnobod tumani, Parkent ko'chasi 76. H/R 2021 8000 6072 8496 2001 “OFB” MFO: 01071 INN: 207086151”</p>
-            <p>This site is not affiliated with Facebook, Google, or any social media platform. All trademarks belong to their owners.</p>
-            <p>Copyright 2025® Simona Ladyyfit</p>
-        </div>
-    </footer>
+        // Telefon maskasi
+        document.getElementById('userPhone').addEventListener('input', e => {
+            let v = e.target.value.replace(/[^\d]/g, '');
+            if (v.startsWith('998')) v = v.slice(3);
+            if (v.length > 9) v = v.slice(0, 9);
+            let f = '+998';
+            if (v[0]) f += ' ' + v.slice(0, 2);
+            if (v[2]) f += ' ' + v.slice(2, 5);
+            if (v[5]) f += ' ' + v.slice(5, 7);
+            if (v[7]) f += ' ' + v.slice(7, 9);
+            e.target.value = f;
+        });
 
-    <!-- MODALS -->
-    <div class="modal" id="registerModal">
-        <div class="modal-content">
-            <h3>Ro‘yxatdan o‘tish</h3>
-            <p>Iltimos, ismingiz va telefon raqamingizni kiriting:</p>
-            <input type="text" id="userName" placeholder="Ismingiz" required>
-            <input type="tel" id="userPhone" placeholder="+998 __ ___ __ __" required>
-            <button class="modal-btn" onclick="completeRegistration()">Ro‘yxatdan o‘tish</button>
-        </div>
-    </div>
+        // Modal functions
+        const openModal = id => document.getElementById(id).style.display = 'flex';
+        const closeModal = id => document.getElementById(id).style.display = 'none';
 
-    <div class="modal" id="finalModal">
-        <div class="modal-content">
-            <h3>1 qadam qoldi!</h3>
-            <p>Marafon boshlanishiga oz qoldi. Telegram kanalga o‘ting!</p>
-            <button class="modal-btn final-btn" onclick="goToTelegram()">Telegram kanalga o‘tish</button>
-        </div>
-    </div>
+        document.querySelectorAll('.btn').forEach(b => b.onclick = () => openModal('registerModal'));
+        window.onclick = e => {
+            if (e.target.classList.contains('modal')) closeModal(e.target.id);
+        };
 
-    <div class="modal" id="loadingModal">
-        <div class="modal-content">
-            <h3>Yuklanmoqda...</h3>
-        </div>
-    </div>
+        // Telegram link
+        function goToTelegram() {
+            window.open('https://t.me/+XLq4LXLQudxiZmQ6', '_blank');
+        }
 
-</div>
+        // Google Sheets URL
+        const URL = 'https://script.google.com/macros/s/AKfycbyol0tp71woGCtJma4LD_wnp0epomoAQsE3DGhh6zHgIj_r6ry_YPRpiR6KOSeOqPuC/exec';
 
-<script>
-    // Timer
-    let sec = 59, min = 1;
-    const timer = document.getElementById('timer');
-    setInterval(() => {
-        let m = String(min).padStart(2,'0'), s = String(sec).padStart(2,'0');
-        timer.textContent = `${m}:${s}`;
-        if (sec-- === 0) { if (min-- === 0) { timer.textContent = "00:00"; return; } sec = 59; }
-    }, 1000);
+        // Registration
+        function completeRegistration() {
+            const name = document.getElementById('userName').value.trim();
+            let phone = document.getElementById('userPhone').value.replace(/[^\d]/g, '');
+            if (phone.startsWith('998')) phone = phone.slice(3);
+            if (phone.length !== 9) return alert('Telefon: 9 ta raqam kiriting!'), document.getElementById('userPhone').focus();
+            if (!name || name.length < 2) return alert('To‘g‘ri ism kiriting!'), document.getElementById('userName').focus();
 
-    // Telefon maskasi
-    document.getElementById('userPhone').addEventListener('input', e => {
-        let v = e.target.value.replace(/[^\d]/g, '');
-        if (v.startsWith('998')) v = v.slice(3);
-        if (v.length > 9) v = v.slice(0,9);
-        let f = '+998';
-        if (v[0]) f += ' ' + v.slice(0,2);
-        if (v[2]) f += ' ' + v.slice(2,5);
-        if (v[5]) f += ' ' + v.slice(5,7);
-        if (v[7]) f += ' ' + v.slice(7,9);
-        e.target.value = f;
-    });
+            closeModal('registerModal');
+            openModal('loadingModal');
 
-    // Modal
-    const open = id => document.getElementById(id).style.display = 'flex';
-    const close = id => document.getElementById(id).style.display = 'none';
-    document.querySelectorAll('.btn').forEach(b => b.onclick = () => open('registerModal'));
-    window.onclick = e => { if (e.target.classList.contains('modal')) close(e.target.id); };
-
-    // Telegram
-    function goToTelegram() { location.href = 'https://t.me/+XLq4LXLQudxiZmQ6'; }
-
-    // Google Sheets
-    const URL = 'https://script.google.com/macros/s/AKfycbyol0tp71woGCtJma4LD_wnp0epomoAQsE3DGhh6zHgIj_r6ry_YPRpiR6KOSeOqPuC/exec';
-    function completeRegistration() {
-        const name = document.getElementById('userName').value.trim();
-        let phone = document.getElementById('userPhone').value.replace(/[^\d]/g, '');
-        if (phone.startsWith('998')) phone = phone.slice(3);
-        if (phone.length !== 9) return alert('Telefon: 9 ta raqam kiriting!'), document.getElementById('userPhone').focus();
-        if (!name || name.length < 2) return alert('To‘g‘ri ism kiriting!'), document.getElementById('userName').focus();
-
-        close('registerModal'); open('loadingModal');
-        fetch(URL, { method: 'POST', mode: 'no-cors', body: new URLSearchParams({ name, phone: '+998'+phone }) })
-            .finally(() => { close('loadingModal'); open('finalModal'); });
-    }
-</script>
+            fetch(URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: new URLSearchParams({ name, phone: '+998' + phone })
+            })
+                .finally(() => {
+                    closeModal('loadingModal');
+                    openModal('finalModal');
+                });
+        }
+    </script>
 </body>
+
 </html>
