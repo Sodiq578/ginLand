@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promo Sahifa</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -35,7 +38,7 @@
                 <div class="free">BEPUL</div>
             </div>
 
-            <button class="btn">RO‘YXATDAN O‘TISH</button>
+            <button class="btn pulse">RO‘YXATDAN O‘TISH</button>
             <p class="limit-text">Shoshiling, joylar soni cheklangan</p>
             <div class="timer" id="timer">01:59</div>
         </div>
@@ -64,52 +67,51 @@
         </div>
 
         <div class="free-big">BEPUL</div>
-                   <button class="btn">RO‘YXATDAN O‘TISH</button>
+        <button class="btn pulse">RO‘YXATDAN O‘TISH</button>
 
         <div class="hurry">Shoshiling, joylar soni cheklangan</div>
     </section>
 
     <!-- FOOTER -->
-   <footer>
-    <div class="footer-box">
-        <h2>Madina Junaydullayevna</h2>
+    <footer>
+        <div class="footer-box">
+            <h2>Madina Junaydullayevna</h2>
 
-        <a href="tel:+9989390688766">+998 (93) 068 87 66</a>
+            <a href="tel:+9989390688766">+998 (93) 068 87 66</a>
 
-        <button class="footer-btn-telegram" onclick="window.location.href='https://t.me/yourusername'">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram Icon">
-            Telegramdan bog'lanish
-        </button>
+            <button class="footer-btn-telegram" onclick="window.location.href='https://t.me/yourusername'">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram Icon">
+                Telegramdan bog'lanish
+            </button>
 
-        <p>“Madina Junaydullayevna” YATT Toshkent shahri, Yashnobod tumani, Parkent ko'chasi 76. H/R 2021 8000 6072 8496 2001 “OFB” MFO: 01071 INN: 207086151”</p>
+            <p>“Madina Junaydullayevna” YATT Toshkent shahri, Yashnobod tumani, Parkent ko'chasi 76. H/R 2021 8000 6072 8496 2001 “OFB” MFO: 01071 INN: 207086151”</p>
 
-        <p>This site or product is not part of or endorsed by Facebook, Google, or any social media platform in any way. FACEBOOK is a trademark of META PLATFORMS, Inc. YOUTUBE and GOOGLE are trademarks of ALPHABET, Inc.</p>
+            <p>This site or product is not part of or endorsed by Facebook, Google, or any social media platform in any way. FACEBOOK is a trademark of META PLATFORMS, Inc. YOUTUBE and GOOGLE are trademarks of ALPHABET, Inc.</p>
 
-        <p>Copyright 2025® Simona Ladyyfit</p>
+            <p>Copyright 2025® Simona Ladyyfit</p>
+        </div>
+    </footer>
+
+    <!-- MODAL (NAME + PHONE) -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <h3>Ro‘yxatdan o‘tish</h3>
+            <p>Iltimos, ismingiz va telefon raqamingizni kiriting:</p>
+           <input type="text" id="userName" placeholder="Ismingiz" required>
+<input type="tel" id="userPhone" placeholder="+998 __ ___ __ __" required>
+           <!-- <input type="tel" maxlength="13"> -->
+            <button class="modal-btn" onclick="completeRegistration()">Ro‘yxatdan o‘tish</button>
+        </div>
     </div>
-</footer>
 
-
-
-
-    <!-- MODAL -->
-<div class="modal" id="registerModal">
-    <div class="modal-content">
-        <h3>Ro‘yxatdan o‘tish</h3>
-        <p>Iltimos, ismingizni kiriting:</p>
-        <input type="text" id="userName" placeholder="Ismingiz" required>
-        <button class="modal-btn" onclick="completeRegistration()">Ro‘yxatdan o‘tish</button>
+    <!-- 1 QADAM QOLDI MODAL -->
+    <div class="modal" id="finalModal">
+        <div class="modal-content">
+            <h3>1 qadam qoldi!</h3>
+            <p>Marafon boshlanishiga oz qoldi. Telegram kanalga o‘ting!</p>
+            <button class="modal-btn final-btn" onclick="goToTelegram()">Telegram kanalga o‘tish</button>
+        </div>
     </div>
-</div>
-
-<!-- 1 QADAM QOLDI MODAL -->
-<div class="modal" id="finalModal">
-    <div class="modal-content">
-        <h3>1 qadam qoldi!</h3>
-        <p>Marafon boshlanishiga oz qoldi. Telegram kanalga o‘ting!</p>
-        <button class="modal-btn final-btn" onclick="goToTelegram()">Telegram kanalga o‘tish</button>
-    </div>
-</div>
 
 </div>
 
