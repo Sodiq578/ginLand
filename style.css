@@ -22,6 +22,7 @@ body {
 /* ==== PROMO ==== */
 .promo {
     text-align: center;
+    
 }
 
 .date-box {
@@ -45,6 +46,7 @@ body {
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .subtitle span {
@@ -151,7 +153,7 @@ body {
 
 /* ==== LIMIT & TIMER ==== */
 .limit-text {
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 12px;
     font-weight: 200;
 }
@@ -198,6 +200,8 @@ body {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+
+    text-align: left;
 }
 
 .yumaloq {
@@ -381,3 +385,17 @@ footer {
         animation-duration: 0s !important;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
