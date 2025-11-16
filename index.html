@@ -6,24 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promo Sahifa</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '994529509292030');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
     <style>
+        /* RESET & GLOBAL */
         * {
             margin: 0;
             padding: 0;
@@ -43,6 +27,7 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
             flex-direction: column;
         }
 
+        /* PROMO */
         .promo {
             text-align: center;
         }
@@ -68,9 +53,8 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
 
         .subtitle {
             font-weight: 600;
-                line-height: 1.5; /* yoki 24px kabi konkret qiymat */
-                font-size: 18px;
-
+            line-height: 1.5;
+            font-size: 18px;
         }
 
         .subtitle span {
@@ -89,24 +73,30 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
             margin-top: 20px;
         }
 
-        .doctor-name {
+        .doctor-name,
+        .doctor-name1 {
             position: absolute;
+            background: #000;
+            color: #fff;
+            border-radius: 30px;
+            font-size: 12px;
+            border: 2px solid #B91C1B;
+        }
+
+        .doctor-name {
             bottom: 10px;
             left: 70%;
             transform: translateX(-50%);
-            background: #000;
-            color: #fff;
             padding: 10px;
-            border-radius: 30px;
-            font-size: 12px;
             width: 210px;
-            border: 2px solid #B91C1B;
-            margin-left: 30px;
         }
 
-        .doctor-name span {
-            font-size: 11px;
-            opacity: .8;
+        .doctor-name1 {
+            bottom: 80px;
+            left: 10%;
+            transform: translateX(-50%);
+            padding: 5px 10px;
+            width: 210px;
         }
 
         .price-box-container {
@@ -188,6 +178,7 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
             color: #B91C1B;
         }
 
+        /* 3 kunlik bepul */
         .bepul {
             margin: 35px auto 0;
             text-align: center;
@@ -228,16 +219,7 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
             font-weight: 500;
             color: #333;
             text-align: left;
-            display: -webkit-box;
-            /* -webkit-line-clamp: 3; */
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            letter-spacing: 0.8px;
         }
-
-
-
-    
 
         .free-big {
             font-size: 28px;
@@ -253,6 +235,7 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
             color: #555;
         }
 
+        /* FOOTER */
         footer {
             background: #E5E7EB;
             border-radius: 12px;
@@ -311,18 +294,6 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
             margin: 6px 0;
         }
 
-        .footer-box p:first-of-type {
-            font-size: 10.5px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .footer-box p:last-of-type {
-            font-size: 9.5px;
-            color: #888;
-            margin-top: 12px;
-        }
-
         /* MODAL */
         .modal {
             display: none;
@@ -354,19 +325,6 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
             position: relative;
         }
 
-        .modal-content h3 {
-            font-size: 19px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .modal-content p {
-            font-size: 13.5px;
-            color: #000000;
-            margin-bottom: 18px;
-            line-height: 1.5;
-        }
-
         .modal-content input {
             width: 100%;
             padding: 12px;
@@ -389,114 +347,20 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
             box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
             border-bottom: 4px solid #4c080b;
         }
-
-        /* LOADER */
-        .modal-loader {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #fff;
-            border-radius: 14px;
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 15;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .modal-loader.active {
-            display: flex !important;
-        }
-
-        .modal-loader::before {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #B91C1B;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            z-index: 10;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .loader-content {
-            position: relative;
-            z-index: 11;
-            width: 100%;
-        }
-
-        .loader-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #B91C1B;
-            margin-bottom: 15px;
-        }
-
-        .loader-text {
-            font-size: 16px;
-            color: #000;
-            margin: 10px 0 20px;
-            line-height: 1.6;
-        }
-
-        .telegram-btn {
-            background: #0088cc;
-            color: #fff;
-            padding: 16px 36px;
-            border: none;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            margin: 10px auto;
-            box-shadow: 0 4px 12px rgba(0, 136, 204, .3);
-            text-decoration: none;
-        }
-
-        .telegram-btn img {
-            width: 26px;
-            height: 26px;
-        }
-
-        .loader-footer {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #666;
-            line-height: 1.5;
-        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <!-- PROMO -->
         <div class="promo">
             <div class="date-box">26–27–28 NOYABR | Soat 21:00 da</div>
             <p class="title">Siydik tutib tura olmaslik muammosidan qutuling!</p>
             <p class="subtitle">Yo'talganingizda yoki aksa urganda siydik chiqib ketadimi? <span>Jinsiy hayotda
                     zavq kamayganmi?</span></p>
             <div class="doctor">
-                <img class="doktor-img" src="./images/back3.png" alt="Madina">
-                <div class="doctor-name"><b>Madina Junaydullayevna</b><br><span>Intim gimnastika coach-trener | 5000+
-                        ayol</span></div>
+                <img src="./images/back3.png" alt="Madina">
+                <div class="doctor-name1">Madina Junaydullayevna</div>
+                <div class="doctor-name"><span>Intim gimnastika coach-trener | 5000+ ayol</span></div>
             </div>
             <div class="price-box-container">
                 <div class="price-box">
@@ -514,16 +378,20 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
             <div class="options">
                 <div class="option">
                     <div class="yumaloq"></div><label class="first-option-text"><b>Siydik tutolmaslik, qin
-                        kengayishi</b> va Kegel mashqlari sirlarini bilib olasiz</label>
+                            kengayishi</b> va Kegel mashqlari sirlarini bilib olasiz</label>
                 </div>
                 <div class="option">
-                    <div class="yumaloq"></div><label class="option-text"><b>Matka tushishi</b> va bachadon bilan bog‘liq muammolar uchun <b>tabiiy yechimlarni</b> o‘rganasiz</label>
+                    <div class="yumaloq"></div><label class="option-text"><b>Matka tushishi</b> va bachadon bilan
+                        bog‘liq muammolar uchun <b>tabiiy yechimlarni</b> o‘rganasiz</label>
                 </div>
                 <div class="option">
-                    <div class="yumaloq"></div><label class="option-text" ><b>Orgazm sezmaslik,</b>  libido pasayishi va yaqinlikdagi og‘riqlarni hal qilish usullarini ochasiz.</label>
+                    <div class="yumaloq"></div><label class="option-text"><b>Orgazm sezmaslik,</b> libido pasayishi va
+                        yaqinlikdagi og‘riqlarni hal qilish usullarini ochasiz.</label>
                 </div>
                 <div class="option">
-                    <div class="yumaloq"></div><label class="option-text"><b>Er-xotin munosabatidagi</b> sovuqlikni ildizini o’rganish orqali iliqlikni qaytarib, <b>qimmatbaho sovg’alarga</b> ko’milish sirlarini o’rganasizlar.</label>
+                    <div class="yumaloq"></div><label class="option-text"><b>Er-xotin munosabatidagi</b> sovuqlikni
+                        ildizini o’rganish orqali iliqlikni qaytarib, <b>qimmatbaho sovg’alarga</b> ko’milish sirlarini
+                        o’rganasizlar.</label>
                 </div>
             </div>
             <div class="free-big">BEPUL</div>
@@ -535,9 +403,13 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
             <div class="footer-box">
                 <h2>Madina Junaydullayevna</h2>
                 <a href="tel:+9989390688766">+998 (93) 068 87 66</a>
-                <button class="footer-btn-telegram" onclick="goToTelegram()"><img src="https://cdn-icons-png.flaticon.com/32/2111/2111646.png" alt="Telegram">Telegramdan bog'lanish</button>
-                <p>“Madina Junaydullayevna” YATT Toshkent sh., Yashnobod tum., Parkent ko'ch. 76. H/R 2021 8000 6072 8496 2001 “OFB” MFO: 01071 INN: 207086151”</p>
-                <p>This site is not affiliated with Facebook, Google, or any social media platform. All trademarks belong to their owners.</p>
+                <button class="footer-btn-telegram" onclick="goToTelegram()"><img
+                        src="https://cdn-icons-png.flaticon.com/32/2111/2111646.png" alt="Telegram">Telegramdan
+                    bog'lanish</button>
+                <p>“Madina Junaydullayevna” YATT Toshkent sh., Yashnobod tum., Parkent ko'ch. 76. H/R 2021 8000 6072
+                    8496 2001 “OFB” MFO: 01071 INN: 207086151”</p>
+                <p>This site is not affiliated with Facebook, Google, or any social media platform. All trademarks
+                    belong to their owners.</p>
                 <p>Copyright 2025® Simona Ladyyfit</p>
             </div>
         </footer>
@@ -545,15 +417,6 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
         <!-- MODAL -->
         <div class="modal" id="registerModal">
             <div class="modal-content">
-                <!-- LOADER -->
-                <div class="modal-loader" id="modalLoader">
-                    <div class="loader-content">
-                        <h3 class="loader-title">Oxirgi qadam qoldi!</h3>
-                        <p class="loader-text">Marafon faqat yopiq kanalda bo’ladi.</p>
-                    </div>
-                </div>
-
-                <!-- FORM -->
                 <h3>Ro‘yxatdan o‘tish</h3>
                 <p>Iltimos, ismingiz va telefon raqamingizni kiriting:</p>
                 <input type="text" id="userName" placeholder="Ismingiz" required>
@@ -597,24 +460,20 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
 
         // MODAL
         const modal = document.getElementById('registerModal');
-        const modalLoader = document.getElementById('modalLoader');
         const submitBtn = document.getElementById('submitBtn');
 
         const openModal = () => {
             if (!timerRunning) { alert("Vaqt tugadi!"); return; }
             modal.classList.add('active');
-            modalLoader.classList.remove('active');
         };
 
         const closeModal = () => {
             modal.classList.remove('active');
-            modalLoader.classList.remove('active');
         };
 
         buttons.forEach(b => b.onclick = openModal);
-        window.onclick = e => { if (e.target === modal) closeModal(); };
 
-        // GOOGLE SHEETS + LOADER + SUCCESS
+        // GOOGLE SHEETS + REDIRECT
         const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyol0tp71woGCtJma4LD_wnp0epomoAQsE3DGhh6zHgIj_r6ry_YPRpiR6KOSeOqPuC/exec';
 
         submitBtn.onclick = () => {
@@ -626,10 +485,6 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
 
             if (phone.length !== 9) { alert('Telefon: 9 ta raqam kiriting!'); return; }
             if (!name || name.length < 2) { alert('To‘g‘ri ism kiriting!'); return; }
-
-            modalLoader.classList.add('active');
-            submitBtn.disabled = true;
-            submitBtn.textContent = "Yuborilmoqda...";
 
             fetch(SHEET_URL, {
                 method: 'POST',
