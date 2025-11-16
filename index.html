@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="uz">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,60 +13,373 @@
             font-weight: 400 700;
             font-display: swap;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background: #fff; padding: 15px; }
-        .container { max-width: 420px; margin: auto; display: flex; flex-direction: column; }
-        .promo { text-align: center; }
-        .date-box { display: inline-block; padding: 6px 16px; border: 2px solid #B91C1B; border-radius: 20px; font-size: 14px; margin-bottom: 12px; font-weight: 400; color: black; }
-        .title { font-weight: 500; font-size: 14px; white-space: nowrap; overflow: hidden; margin: 8px 0; }
-        .subtitle { font-weight: 600; }
-        .subtitle span { color: #d10000; }
-        .doctor { position: relative; display: inline-block; }
-        .doctor img { width: 200px; border-radius: 12px; margin-left: -40px; margin-top: 20px; }
-        .doctor-name { position: absolute; bottom: 10px; left: 70%; transform: translateX(-50%); background: #000; color: #fff; padding: 10px; border-radius: 30px; font-size: 12px; width: 200px; border: 2px solid #B91C1B; margin-left: 30px; }
-        .doctor-name span { font-size: 11px; opacity: .8; }
-        .price-box-container { border: 2px solid #EF4444; border-radius: 14px; padding: 20px 0; margin-top: -5px; }
-        .price-box { display: flex; justify-content: center; align-items: center; gap: 25px; }
-        .old-price { font-size: 20px; text-decoration: line-through; color: #666; }
-        .free { font-size: 22px; color: red; font-weight: 600; }
-        .btn { margin: 15px auto 0; background: #B91C1B; color: #fff; padding: 18px 24px; width: 300px; font-size: 17px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,.3); border-bottom: 4px solid #4c080b; position: relative; overflow: hidden; }
-        .btn:active { transform: translateY(2px); border-bottom: 2px solid #4c080b; }
-        .pulse { animation: pulse 1.8s infinite; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(185,28,27,.7); } 70% { box-shadow: 0 0 0 12px rgba(185,28,27,0); } 100% { box-shadow: 0 0 0 0 rgba(185,28,27,0); } }
-        .limit-text { margin-top: 15px; font-size: 12px; color: #666; }
-        .timer { margin-top: 5px; font-size: 30px; font-weight: 600; color: #B91C1B; }
-        .bepul { margin: 35px auto 0; text-align: center; }
-        .bepul-header { font-size: 17px; font-weight: 700; margin-bottom: 18px; }
-        .options { gap: 14px; display: flex; flex-direction: column; margin-bottom: 20px; }
-        .option { display: flex; align-items: flex-start; line-height: 1.5; }
-        .yumaloq { width: 18px; height: 18px; border-radius: 50%; border: 3px solid #B91C1B; flex-shrink: 0; margin-right: 10px; margin-top: 2px; }
-        .option-text, .first-option-text { font-size: 16px; font-weight: 500; color: #333; text-align: left; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; letter-spacing: 0.8px; }
-        .free-big { font-size: 28px; font-weight: 700; margin: 18px 0; text-transform: uppercase; color: #B91C1B; }
-        .hurry { margin-top: 12px; font-size: 14px; color: #555; }
-        footer { background: #E5E7EB; border-radius: 12px; margin-top: 40px; padding: 18px 0; }
-        .footer-box { max-width: 420px; margin: auto; text-align: center; padding: 0 15px; }
-        .footer-box h2 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
-        .footer-box a { display: block; font-size: 17px; color: #B91C1B; text-decoration: none; margin: 8px 0; }
-        .footer-btn-telegram { background: #0088cc; color: #fff; padding: 12px 18px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; width: 260px; max-width: 100%; font-size: 13.5px; display: flex; align-items: center; justify-content: center; gap: 8px; margin: 12px auto; }
-        .footer-btn-telegram img { width: 18px; height: 18px; }
-        .footer-box p { font-size: 11px; color: #555; line-height: 1.4; margin: 6px 0; }
-        .footer-box p:first-of-type { font-size: 10.5px; color: #333; margin-bottom: 10px; }
-        .footer-box p:last-of-type { font-size: 9.5px; color: #888; margin-top: 12px; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #fff;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 420px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .promo {
+            text-align: center;
+        }
+
+        .date-box {
+            display: inline-block;
+            padding: 6px 16px;
+            border: 2px solid #B91C1B;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 12px;
+            font-weight: 400;
+            color: black;
+        }
+
+        .title {
+            font-weight: 500;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            margin: 8px 0;
+        }
+
+        .subtitle {
+            font-weight: 600;
+        }
+
+        .subtitle span {
+            color: #d10000;
+        }
+
+        .doctor {
+            position: relative;
+            display: inline-block;
+        }
+
+        .doctor img {
+            width: 200px;
+            border-radius: 12px;
+            margin-left: -40px;
+            margin-top: 20px;
+        }
+
+        .doctor-name {
+            position: absolute;
+            bottom: 10px;
+            left: 70%;
+            transform: translateX(-50%);
+            background: #000;
+            color: #fff;
+            padding: 10px;
+            border-radius: 30px;
+            font-size: 12px;
+            width: 200px;
+            border: 2px solid #B91C1B;
+            margin-left: 30px;
+        }
+
+        .doctor-name span {
+            font-size: 11px;
+            opacity: .8;
+        }
+
+        .price-box-container {
+            border: 2px solid #EF4444;
+            border-radius: 14px;
+            padding: 20px 0;
+            margin-top: -5px;
+        }
+
+        .price-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .old-price {
+            font-size: 20px;
+            text-decoration: line-through;
+            color: #666;
+        }
+
+        .free {
+            font-size: 22px;
+            color: red;
+            font-weight: 600;
+        }
+
+        .btn {
+            margin: 15px auto 0;
+            background: #B91C1B;
+            color: #fff;
+            padding: 18px 24px;
+            width: 300px;
+            font-size: 17px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+            border-bottom: 4px solid #4c080b;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+            border-bottom: 2px solid #4c080b;
+        }
+
+        .pulse {
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(185, 28, 27, .7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 12px rgba(185, 28, 27, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(185, 28, 27, 0);
+            }
+        }
+
+        .limit-text {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .timer {
+            margin-top: 5px;
+            font-size: 30px;
+            font-weight: 600;
+            color: #B91C1B;
+        }
+
+        .bepul {
+            margin: 35px auto 0;
+            text-align: center;
+        }
+
+        .bepul-header {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .options {
+            gap: 14px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .option {
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.5;
+        }
+
+        .yumaloq {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 3px solid #B91C1B;
+            flex-shrink: 0;
+            margin-right: 10px;
+            margin-top: 2px;
+        }
+
+        .option-text,
+        .first-option-text {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            text-align: left;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            letter-spacing: 0.8px;
+        }
+
+        .free-big {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 18px 0;
+            text-transform: uppercase;
+            color: #B91C1B;
+        }
+
+        .hurry {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        footer {
+            background: #E5E7EB;
+            border-radius: 12px;
+            margin-top: 40px;
+            padding: 18px 0;
+        }
+
+        .footer-box {
+            max-width: 420px;
+            margin: auto;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .footer-box h2 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .footer-box a {
+            display: block;
+            font-size: 17px;
+            color: #B91C1B;
+            text-decoration: none;
+            margin: 8px 0;
+        }
+
+        .footer-btn-telegram {
+            background: #0088cc;
+            color: #fff;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 260px;
+            max-width: 100%;
+            font-size: 13.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 12px auto;
+        }
+
+        .footer-btn-telegram img {
+            width: 18px;
+            height: 18px;
+        }
+
+        .footer-box p {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.4;
+            margin: 6px 0;
+        }
+
+        .footer-box p:first-of-type {
+            font-size: 10.5px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .footer-box p:last-of-type {
+            font-size: 9.5px;
+            color: #888;
+            margin-top: 12px;
+        }
 
         /* MODAL */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.65); justify-content: center; align-items: center; padding: 15px; z-index: 999; }
-        .modal.active { display: flex; }
-        .modal-content { background: #fff; padding: 25px 20px; border-radius: 14px; text-align: center; max-width: 360px; width: 100%; box-shadow: 0 8px 20px rgba(0,0,0,.3); border: 2px solid #B91C1B; position: relative; }
-        .modal-content h3 { font-size: 19px; font-weight: 600; margin-bottom: 12px; }
-        .modal-content p { font-size: 13.5px; color: #333; margin-bottom: 18px; line-height: 1.5; }
-        .modal-content input { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 10px; font-size: 15px; }
-        .modal-btn { background: #B91C1B; color: #fff; padding: 14px 18px; width: 100%; border: none; border-radius: 12px; font-size: 17px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,.3); border-bottom: 4px solid #4c080b; }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .65);
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            z-index: 999;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 25px 20px;
+            border-radius: 14px;
+            text-align: center;
+            max-width: 360px;
+            width: 100%;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .3);
+            border: 2px solid #B91C1B;
+            position: relative;
+        }
+
+        .modal-content h3 {
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .modal-content p {
+            font-size: 13.5px;
+            color: #000000;
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+
+        .modal-content input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+
+        .modal-btn {
+            background: #B91C1B;
+            color: #fff;
+            padding: 14px 18px;
+            width: 100%;
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+            border-bottom: 4px solid #4c080b;
+        }
 
         /* LOADER – TO‘LIQ TO‘G‘RILANGAN */
         .modal-loader {
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(255, 255, 255, 0.97);
             border-radius: 14px;
             display: none;
@@ -76,6 +390,7 @@
             padding: 20px;
             text-align: center;
         }
+
         .modal-loader.active {
             display: flex !important;
         }
@@ -91,9 +406,15 @@
             animation: spin 1s linear infinite;
             z-index: 10;
         }
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .loader-content {
@@ -101,28 +422,33 @@
             z-index: 11;
             width: 100%;
         }
+
         .loader-title {
             font-size: 22px;
             font-weight: 700;
             color: #B91C1B;
             margin-bottom: 15px;
         }
+
         .loader-text {
             font-size: 16px;
             color: #000;
             margin: 10px 0 20px;
             line-height: 1.6;
         }
+
         .arrows {
             display: flex;
             justify-content: center;
             gap: 12px;
             margin: 20px 0;
         }
+
         .arrow {
             width: 22px;
             height: 32px;
         }
+
         .telegram-btn {
             background: #0088cc;
             color: #fff;
@@ -136,13 +462,15 @@
             align-items: center;
             gap: 12px;
             margin: 10px auto;
-            box-shadow: 0 4px 12px rgba(0,136,204,.3);
+            box-shadow: 0 4px 12px rgba(0, 136, 204, .3);
             text-decoration: none;
         }
+
         .telegram-btn img {
             width: 26px;
             height: 26px;
         }
+
         .loader-footer {
             margin-top: 20px;
             font-size: 13px;
@@ -151,6 +479,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
@@ -158,13 +487,18 @@
         <div class="promo">
             <div class="date-box">26–27–28 NOYABR | Soat 21:00 da</div>
             <p class="title">Siydik tutib tura olmaslik muammosidan qutuling!</p>
-            <p class="subtitle">Yo'talganingizda yoki aksa urganda siydik chiqib ketadimi? <span>Jinsiy hayotda zavq kamayganmi?</span></p>
+            <p class="subtitle">Yo'talganingizda yoki aksa urganda siydik chiqib ketadimi? <span>Jinsiy hayotda zavq
+                    kamayganmi?</span></p>
             <div class="doctor">
                 <img class="doktor-img" src="./images/back3.png" alt="Madina">
-                <div class="doctor-name"><b>Madina Junaydullayevna</b><br><span>Intim gimnastika coach-trener | 5000+ ayol</span></div>
+                <div class="doctor-name"><b>Madina Junaydullayevna</b><br><span>Intim gimnastika coach-trener | 5000+
+                        ayol</span></div>
             </div>
             <div class="price-box-container">
-                <div class="price-box"><div class="old-price">997,000 so'm</div><div class="free">BEPUL</div></div>
+                <div class="price-box">
+                    <div class="old-price">997,000 so'm</div>
+                    <div class="free">BEPUL</div>
+                </div>
                 <button class="btn pulse">RO‘YXATDAN O‘TISH</button>
                 <p class="limit-text">Shoshiling, joylar soni cheklangan</p>
                 <div class="timer" id="timer">01:59</div>
@@ -174,10 +508,23 @@
         <section class="bepul">
             <div class="bepul-header">3 kunlik BEPUL marafonda siz:</div>
             <div class="options">
-                <div class="option"><div class="yumaloq"></div><label class="first-option-text"><b>Siydik tutolmaslik,</b> qin kengayishi va <b>Kegel mashqlari</b> sirlarini bilib olasiz</label></div>
-                <div class="option"><div class="yumaloq"></div><label class="option-text"><b>Matka tushishi</b> va bachadon bilan bog‘liq muammolar uchun <b>tabiiy yechimlarni</b> o‘rganasiz</label></div>
-                <div class="option"><div class="yumaloq"></div><label class="option-text">Orgazm sezmaslik, <b>libido pasayishi</b> va yaqinlikdagi og‘riqlarni hal qilish usullarini ochasiz.</label></div>
-                <div class="option"><div class="yumaloq"></div><label class="option-text">Er-xotin munosabatidagi sovuqlikni ildizini o’rganish orqali iliqlikni qaytarib, <b>qimmatbaho sovg’alarga</b> ko’milish sirlarini o’rganasizlar.</label></div>
+                <div class="option">
+                    <div class="yumaloq"></div><label class="first-option-text"><b>Siydik tutolmaslik,</b> qin
+                        kengayishi va <b>Kegel mashqlari</b> sirlarini bilib olasiz</label>
+                </div>
+                <div class="option">
+                    <div class="yumaloq"></div><label class="option-text"><b>Matka tushishi</b> va bachadon bilan
+                        bog‘liq muammolar uchun <b>tabiiy yechimlarni</b> o‘rganasiz</label>
+                </div>
+                <div class="option">
+                    <div class="yumaloq"></div><label class="option-text">Orgazm sezmaslik, <b>libido pasayishi</b> va
+                        yaqinlikdagi og‘riqlarni hal qilish usullarini ochasiz.</label>
+                </div>
+                <div class="option">
+                    <div class="yumaloq"></div><label class="option-text">Er-xotin munosabatidagi sovuqlikni ildizini
+                        o’rganish orqali iliqlikni qaytarib, <b>qimmatbaho sovg’alarga</b> ko’milish sirlarini
+                        o’rganasizlar.</label>
+                </div>
             </div>
             <div class="free-big">BEPUL</div>
             <button class="btn pulse">RO‘YXATDAN O‘TISH</button>
@@ -188,9 +535,13 @@
             <div class="footer-box">
                 <h2>Madina Junaydullayevna</h2>
                 <a href="tel:+9989390688766">+998 (93) 068 87 66</a>
-                <button class="footer-btn-telegram" onclick="goToTelegram()"><img src="https://cdn-icons-png.flaticon.com/32/2111/2111646.png" alt="Telegram">Telegramdan bog'lanish</button>
-                <p>“Madina Junaydullayevna” YATT Toshkent sh., Yashnobod tum., Parkent ko'ch. 76. H/R 2021 8000 6072 8496 2001 “OFB” MFO: 01071 INN: 207086151”</p>
-                <p>This site is not affiliated with Facebook, Google, or any social media platform. All trademarks belong to their owners.</p>
+                <button class="footer-btn-telegram" onclick="goToTelegram()"><img
+                        src="https://cdn-icons-png.flaticon.com/32/2111/2111646.png" alt="Telegram">Telegramdan
+                    bog'lanish</button>
+                <p>“Madina Junaydullayevna” YATT Toshkent sh., Yashnobod tum., Parkent ko'ch. 76. H/R 2021 8000 6072
+                    8496 2001 “OFB” MFO: 01071 INN: 207086151”</p>
+                <p>This site is not affiliated with Facebook, Google, or any social media platform. All trademarks
+                    belong to their owners.</p>
                 <p>Copyright 2025® Simona Ladyyfit</p>
             </div>
         </footer>
@@ -203,13 +554,10 @@
                     <div class="loader-content">
                         <h3 class="loader-title">Oxirgi qadam qoldi!</h3>
                         <p class="loader-text">
-                            Marafonda qatnashish uchun quyidagi tugmani<br>
-                            bosib yopiq kanalga obuna bo'ling!
+                           Marafon faqat yopiq kanalda bo’ladi.
                         </p>
-                         
-                        <p class="loader-footer">
-                            3 kunlik marafonga qatnashish uchun yuqoridagi ko‘k tugmani bosib yopiq kanalga obuna bo‘ling!
-                        </p>
+
+                     
                     </div>
                 </div>
 
@@ -296,7 +644,7 @@
                 method: 'POST',
                 mode: 'no-cors',
                 body: new URLSearchParams({ name, phone: '+998' + phone })
-            }).catch(() => {});
+            }).catch(() => { });
 
             // 1.5 sekunddan keyin success sahifasiga o‘tish
             setTimeout(() => {
@@ -309,4 +657,5 @@
         }
     </script>
 </body>
+
 </html>
