@@ -5,8 +5,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Obuna Bo'lish</title>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '994529509292030');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    /* Global Reset */
+    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -15,16 +34,15 @@
     }
 
     body {
-     
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 20px;
+      background: #ffffff;
     }
 
-    /* Container */
+    /* CONTAINER */
     .container {
       background-color: #ffffff;
       padding: 40px 30px;
@@ -33,9 +51,8 @@
       max-width: 420px;
       width: 100%;
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-
       border: 2px solid #B91C1B;
+      transition: 0.3s ease;
     }
 
     .container:hover {
@@ -43,12 +60,12 @@
       box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
     }
 
-    /* Title & Subtitle */
+    /* TITLE */
     .title {
       font-size: 34px;
       font-weight: 700;
-      color: #000000;
       margin-bottom: 15px;
+      color: #000;
     }
 
     .subtitle {
@@ -59,14 +76,14 @@
       line-height: 1.6;
     }
 
-    /* Hero Image */
+    /* IMAGE */
     .hero-img {
       width: 100%;
       max-width: 360px;
       margin-bottom: 30px;
     }
 
-    /* Button */
+    /* BUTTON */
     .btn-container {
       margin-bottom: 20px;
     }
@@ -79,14 +96,13 @@
       font-weight: 700;
       font-size: 18px;
       text-transform: uppercase;
-      color: #ffffff;
+      color: #fff;
       background: #039BE5;
       padding: 18px 0;
       border-radius: 50px;
       text-decoration: none;
-     
-      transition: all 0.3s ease;
       width: 100%;
+      transition: 0.3s ease;
     }
 
     .subscribe-btn img {
@@ -100,17 +116,27 @@
       transform: translateY(-3px);
     }
 
-    /* Info Text */
-    .info-text {
+    /* EXTRA TEXTS */
+    .title-text {
       font-size: 14px;
-      color: #000000;
-      max-width: 350px;
-      margin: 0 auto;
-      line-height: 1.6;
-      font-weight: 500;
+      font-weight: 600;
+      line-height: 1.7;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      color: #000;
+      text-align: center;
     }
 
-    /* Responsive */
+    .info-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: #000;
+      line-height: 1.6;
+      max-width: 350px;
+      margin: 0 auto;
+    }
+
+    /* RESPONSIVE */
     @media (max-width: 600px) {
       .title {
         font-size: 28px;
@@ -130,35 +156,57 @@
       }
     }
   </style>
+
 </head>
 
 <body>
   <div class="container">
+
     <h1 class="title">Oxirgi qadam qoldi!</h1>
-    <p class="subtitle">Marafon faqat yopiq kanalda bo’ladi.</p>
-    <img class="hero-img" src="./images/chiziq.png" alt="Arrow icon" loading="lazy" decoding="async">
+
+    <p class="subtitle">
+      Marafonda qatnashish uchun quyidagi tugmani bosib<br>
+      yopiq kanalga obuna bo'ling!
+    </p>
+
+    <img class="hero-img" src="./images/chiziq.png" alt="Arrow icon" loading="lazy">
+
     <div class="btn-container">
-      <a href="https://t.me/+XLq4LXLQudxiZmQ6" class="subscribe-btn" id="subscribeBtn" target="_blank">
+      <a href="https://t.me/+XLq4LXLQudxiZmQ6"
+         class="subscribe-btn"
+         id="subscribeBtn"
+         target="_blank">
         OBUNA BO'LISH
         <img src="./images/telegram.png" alt="telegram icon">
       </a>
     </div>
-    <p class="info-text">Ko’k tugmani bosib yopiq kanalga obuna bo’ling.</p>
+
+    <p class="title-text">
+      3 kunlik marafonga qatnashish
+      uchun tepadagi ko'k tugmani
+      bosib yopiq kanalga
+      obuna bo'ling!
+    </p>
+
+    <p class="info-text">
+      Ko’k tugmani bosib yopiq kanalga obuna bo’ling.
+    </p>
+
   </div>
 
   <script>
     const subscribeBtn = document.getElementById('subscribeBtn');
 
     subscribeBtn.addEventListener('click', () => {
-      console.log('Foydalanuvchi OBUNA BO\'LISH tugmasini bosdi!');
-      // Qo'shimcha JS funksiyalar qo'yishingiz mumkin
+      console.log("Foydalanuvchi OBUNA BO'LISH tugmasini bosdi");
     });
 
-    // 10 soniya ichida avtomatik yo'naltirish
-    setTimeout(() => {
-      window.location.href = "https://t.me/+XLq4LXLQudxiZmQ6";
-    }, 10000);
+    /* 10 soniya ichida avtomatik Telegramga yo‘naltirish */
+    // setTimeout(() => {
+    //   window.location.href = "https://t.me/+XLq4LXLQudxiZmQ6";
+    // }, 10000);
   </script>
+
 </body>
 
 </html>
