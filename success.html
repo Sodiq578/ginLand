@@ -3,47 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obuna bo'ling</title>
+    <title>Tabriklaymiz!</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background: #fff; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background: #f5f5f5; 
+            padding: 20px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+        }
         .success-container {
-            max-width: 380px; width: 100%; text-align: center; padding: 30px 20px;
-            background: #fff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.1);
+            max-width: 380px; 
+            width: 100%; 
+            text-align: center; 
+            padding: 24px 20px;
+            background: #fff; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,.1);
             border: 2px solid #B91C1B;
+            position: relative;
         }
-        .success-title { font-size: 24px; font-weight: 700; color: #B91C1B; margin-bottom: 20px; }
-        .success-text { font-size: 16px; color: #000; margin: 15px 0; line-height: 1.6; }
-        .arrows { display: flex; justify-content: center; gap: 12px; margin: 25px 0; }
-        .arrow { width: 22px; height: 32px; }
+        .confetti {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 26px;
+        }
+        .success-title { 
+            font-size: 26px; 
+            font-weight: 700; 
+            color: #000; 
+            margin-bottom: 16px; 
+            line-height: 1.2;
+        }
+        .success-text { 
+            font-size: 14px; 
+            color: #000; 
+            margin: 16px 0; 
+            line-height: 1.5; 
+        }
         .telegram-btn {
-            background: #0088cc; color: #fff; padding: 16px 36px; border: none;
-            border-radius: 50px; font-size: 18px; font-weight: 600; cursor: pointer;
-            display: inline-flex; align-items: center; gap: 12px; margin: 10px auto;
-            box-shadow: 0 4px 12px rgba(0,136,204,.3); text-decoration: none;
+            background: #0088cc; 
+            color: #fff; 
+            padding: 14px 32px; 
+            border: none;
+            border-radius: 30px; 
+            font-size: 16px; 
+            font-weight: 600; 
+            cursor: pointer;
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center;
+            gap: 10px; 
+            margin: 20px auto;
+            box-shadow: 0 4px 12px rgba(0,136,204,.3); 
+            text-decoration: none;
+            width: 85%;
+            transition: all 0.2s ease;
         }
-        .telegram-btn img { width: 26px; height: 26px; }
-        .footer-note { margin-top: 25px; font-size: 13px; color: #666; line-height: 1.5; }
+        .telegram-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0,136,204,.4);
+        }
+        .telegram-btn img { 
+            width: 24px; 
+            height: 24px; 
+        }
+        .prize {
+            margin-top: 18px;
+            font-size: 17px;
+            color: #000;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+        .prize .amount {
+            font-size: 19px;
+            color: #000;
+            font-weight: 700;
+        }
+        .prize .free {
+            color: #B91C1B;
+            font-weight: 700;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
     <div class="success-container">
-        <h1 class="success-title">Oxirgi qadam qoldi!</h1>
+        <div class="confetti">🎉</div>
+        <h1 class="success-title">Tabriklaymiz! 🎉</h1>
         <p class="success-text">
-            Marafonda qatnashish uchun quyidagi tugmani<br>
-            bosib yopiq kanalga obuna bo'ling!
+            Siz muvaffaqiyatli ro'yxatdan o'tdingiz. Tez<br>
+            orada Telegramda xabar keladi!
         </p>
       
         <a href="https://t.me/simonaladyfit_admin" target="_blank" class="telegram-btn">
-            <span>OBUNA BO'LISH</span>
-            <img src="https://cdn-icons-png.flaticon.com/32/2111/2111646.png" alt="Telegram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+            <span>Telegramga o'tish</span>
         </a>
-        <p class="footer-note">
-            3 kunlik marafonga qatnashish<br>
-            uchun tepadagi ko'k tugmani<br>
-            bosib yopiq kanalga obuna bo'ling!
-        </p>
+      
     </div>
 </body>
 </html>
