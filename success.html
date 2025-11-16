@@ -1,114 +1,164 @@
 <!DOCTYPE html>
 <html lang="uz">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabriklaymiz!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Montserrat', sans-serif; 
-            background: #f5f5f5; 
-            padding: 20px; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh; 
-        }
-        .success-container {
-            max-width: 380px; 
-            width: 100%; 
-            text-align: center; 
-            padding: 24px 20px;
-            background: #fff; 
-            border-radius: 16px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,.1);
-            border: 2px solid #B91C1B;
-            position: relative;
-        }
-        .confetti {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            font-size: 26px;
-        }
-        .success-title { 
-            font-size: 26px; 
-            font-weight: 700; 
-            color: #000; 
-            margin-bottom: 16px; 
-            line-height: 1.2;
-        }
-        .success-text { 
-            font-size: 14px; 
-            color: #000; 
-            margin: 16px 0; 
-            line-height: 1.5; 
-        }
-        .telegram-btn {
-            background: #0088cc; 
-            color: #fff; 
-            padding: 14px 32px; 
-            border: none;
-            border-radius: 30px; 
-            font-size: 16px; 
-            font-weight: 600; 
-            cursor: pointer;
-            display: inline-flex; 
-            align-items: center; 
-            justify-content: center;
-            gap: 10px; 
-            margin: 20px auto;
-            box-shadow: 0 4px 12px rgba(0,136,204,.3); 
-            text-decoration: none;
-            width: 85%;
-            transition: all 0.2s ease;
-        }
-        .telegram-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 14px rgba(0,136,204,.4);
-        }
-        .telegram-btn img { 
-            width: 24px; 
-            height: 24px; 
-        }
-        .prize {
-            margin-top: 18px;
-            font-size: 17px;
-            color: #000;
-            font-weight: 600;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
-        .prize .amount {
-            font-size: 19px;
-            color: #000;
-            font-weight: 700;
-        }
-        .prize .free {
-            color: #B91C1B;
-            font-weight: 700;
-            font-size: 18px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obuna Bo'lish</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+     
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Container */
+    .container {
+      background-color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 25px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      border: 2px solid #B91C1B;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Title & Subtitle */
+    .title {
+      font-size: 34px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      font-weight: 700;
+      color: #d10000;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    /* Hero Image */
+    .hero-img {
+      width: 100%;
+      max-width: 360px;
+      margin-bottom: 30px;
+    }
+
+    /* Button */
+    .btn-container {
+      margin-bottom: 20px;
+    }
+
+    .subscribe-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: #ffffff;
+      background: #039BE5;
+      padding: 18px 0;
+      border-radius: 50px;
+      text-decoration: none;
+     
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .subscribe-btn img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .subscribe-btn:hover {
+      background: linear-gradient(90deg, #0288D1, #0097A7);
+      box-shadow: 0 8px 15px rgba(0, 150, 168, 0.4);
+      transform: translateY(-3px);
+    }
+
+    /* Info Text */
+    .info-text {
+      font-size: 14px;
+      color: #000000;
+      max-width: 350px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .title {
+        font-size: 28px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+      }
+
+      .subscribe-btn {
+        font-size: 16px;
+        padding: 16px 0;
+      }
+
+      .info-text {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="success-container">
-        <div class="confetti">🎉</div>
-        <h1 class="success-title">Tabriklaymiz! 🎉</h1>
-        <p class="success-text">
-            Siz muvaffaqiyatli ro'yxatdan o'tdingiz. Tez<br>
-            orada Telegramda xabar keladi!
-        </p>
-      
-        <a href="https://t.me/simonaladyfit_admin" target="_blank" class="telegram-btn">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
-            <span>Telegramga o'tish</span>
-        </a>
-      
+  <div class="container">
+    <h1 class="title">Oxirgi qadam qoldi!</h1>
+    <p class="subtitle">Marafon faqat yopiq kanalda bo’ladi.</p>
+    <img class="hero-img" src="./images/chiziq.png" alt="Arrow icon" loading="lazy" decoding="async">
+    <div class="btn-container">
+      <a href="https://t.me/+XLq4LXLQudxiZmQ6" class="subscribe-btn" id="subscribeBtn" target="_blank">
+        OBUNA BO'LISH
+        <img src="./images/telegram.png" alt="telegram icon">
+      </a>
     </div>
+    <p class="info-text">Ko’k tugmani bosib yopiq kanalga obuna bo’ling.</p>
+  </div>
+
+  <script>
+    const subscribeBtn = document.getElementById('subscribeBtn');
+
+    subscribeBtn.addEventListener('click', () => {
+      console.log('Foydalanuvchi OBUNA BO\'LISH tugmasini bosdi!');
+      // Qo'shimcha JS funksiyalar qo'yishingiz mumkin
+    });
+
+    // 10 soniya ichida avtomatik yo'naltirish
+    setTimeout(() => {
+      window.location.href = "https://t.me/+XLq4LXLQudxiZmQ6";
+    }, 10000);
+  </script>
 </body>
+
 </html>
