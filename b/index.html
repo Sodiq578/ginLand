@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="uz">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Madina Junaydullayevna</title>
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
-<base href="https://simonaladyyfit/b.uz/">
-<link rel="canonical" href="https://simonaladyyfit/b.uz/">
-
-
-  <!-- Font va CSS -->
-  <style>
+ <style>
     * {
       margin: 0;
       padding: 0;
@@ -354,47 +350,12 @@
       border-bottom: 2px solid #4c080b;
     }
   </style>
-
- <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '994529509292030');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->  
-
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105093091', 'ym');
-
-    ym(105093091, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/105093091" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
 </head>
 
 <body>
   <div class="container">
-
-    <!-- ASOSIY BLOK -->
-    <div class="promo">
+    <!-- PROMO -->
+ <div class="promo">
       <div class="date-box">26–27–28 NOYABR | Soat 21:00 da</div>
       <p class="subtitle">Bu texnikalar orqali mening o‘quvchilarim erining ko‘zidagi yagona ayolga
         aylanishdi <span>va sovg‘alar o‘z-o‘zidan kela boshladi</span></p>
@@ -416,8 +377,8 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
       </div>
     </div>
 
-    <!-- 3 kunlik bepul marafon -->
-    <section class="bepul">
+    <!-- BEPUL BLOK -->
+   <section class="bepul">
       <div class="bepul-header">3 kunlik BEPUL marafonda siz:</div>
       <div class="options">
         <div class="option">
@@ -441,43 +402,40 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
       <button class="btn pulse">RO‘YXATDAN O‘TISH</button>
       <div class="hurry">Shoshiling, joylar soni oz qoldi</div>
     </section>
-
     <!-- FOOTER -->
     <footer>
       <div class="footer-box">
         <h2>Madina Junaydullayevna</h2>
-        <a href="tel:+9989390688766">+998 (93) 906 88 766</a>
+        <a href="tel:+998939068876">+998 (93) 906 88 766</a>
         <button class="footer-btn-telegram" onclick="window.open('https://t.me/simonaladyfit_admin','_blank')">
-          <img src="https://cdn-icons-png.flaticon.com/32/2111/2111646.png">Telegramdan bog'lanish
+          <img src="telegram.png" width="18">Telegramdan bog'lanish
         </button>
-        <p>“Madina Junaydullayevna” YATT Toshkent, Yashnobod tumani...</p>
+        <p>“Madina Junaydullayevna” YATT</p>
         <p>Facebook yoki boshqa platformalar bilan bog‘liq emas</p>
         <p>Copyright 2025® Simona Ladyfit</p>
       </div>
     </footer>
+  </div>
 
-    <!-- MODAL -->
-    <div class="modal" id="registerModal">
-      <div class="modal-content">
-        <h3>Ro‘yxatdan o‘tish</h3>
-        <p>Iltimos, ismingiz va telefon raqamingizni kiriting:</p>
-        <input type="text" id="userName" placeholder="Ismingiz">
-        <input type="tel" id="userPhone" placeholder="+998 __ ___ __ __">
-        <button class="modal-btn" id="submitBtn">Ro‘yxatdan o‘tish</button>
-      </div>
+  <!-- MODAL -->
+  <div class="modal" id="registerModal">
+    <div class="modal-content">
+      <h3>Ro‘yxatdan o‘tish</h3>
+      <p>Iltimos, ismingiz va telefon raqamingizni kiriting:</p>
+      <input type="text" id="userName" placeholder="Ismingiz">
+      <input type="tel" id="userPhone" placeholder="+998 __ ___ __ __">
+      <button class="modal-btn" id="submitBtn">Ro‘yxatdan o‘tish</button>
     </div>
-
-  </div> <!-- container -->
+  </div>
 
   <script>
-    // === TIMER ===
+    /* TIMER */
     let sec = 59, min = 1, timerRunning = true;
     const timerEl = document.getElementById('timer');
     const buttons = document.querySelectorAll('.btn');
-
     (function updateTimer() {
       if (!timerRunning) return;
-      timerEl.textContent = `${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+      timerEl.textContent = `${String(min).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
       if (sec > 0) sec--;
       else if (min > 0) { min--; sec = 59; }
       else {
@@ -493,50 +451,43 @@ src="https://www.facebook.com/tr?id=994529509292030&ev=PageView&noscript=1"
       setTimeout(updateTimer, 1000);
     })();
 
-    // === PHONE MASK ===
+    /* PHONE MASK */
     const phoneInput = document.getElementById('userPhone');
     phoneInput.addEventListener('input', e => {
-      let v = e.target.value.replace(/\D/g, '');
-      if (v.startsWith('998')) v = v.slice(3);
-      v = v.slice(0, 9);
+      let v = e.target.value.replace(/\D/g,'');
+      if(v.startsWith('998')) v=v.slice(3);
+      v = v.slice(0,9);
       let f = '+998';
-      if (v.length > 0) f += ' ' + v.slice(0, 2);
-      if (v.length > 2) f += ' ' + v.slice(2, 5);
-      if (v.length > 5) f += ' ' + v.slice(5, 7);
-      if (v.length > 7) f += ' ' + v.slice(7, 9);
+      if(v.length>0) f+=' '+v.slice(0,2);
+      if(v.length>2) f+=' '+v.slice(2,5);
+      if(v.length>5) f+=' '+v.slice(5,7);
+      if(v.length>7) f+=' '+v.slice(7,9);
       e.target.value = f;
     });
 
-    // === MODAL ===
+    /* MODAL */
     const modal = document.getElementById('registerModal');
     buttons.forEach(b => b.onclick = () => {
-      if (!timerRunning) { alert("Vaqt tugadi!"); return; }
+      if(!timerRunning){ alert("Vaqt tugadi!"); return; }
       modal.classList.add('active');
     });
 
-    // === GOOGLE SHEETS SEND ===
+    /* GOOGLE SHEETS SEND */
     const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyol0tp71woGCtJma4LD_wnp0epomoAQsE3DGhh6zHgIj_r6ry_YPRpiR6KOSeOqPuC/exec';
-
     document.getElementById('submitBtn').onclick = () => {
-      if (!timerRunning) { alert("Vaqt tugadi!"); return; }
-
+      if(!timerRunning){ alert("Vaqt tugadi!"); return; }
       const name = document.getElementById('userName').value.trim();
-      let phone = phoneInput.value.replace(/\D/g, '');
-
-      if (phone.startsWith('998')) phone = phone.slice(3);
-      if (phone.length !== 9) { alert('Telefon: 9 ta raqam kiriting!'); return; }
-      if (!name || name.length < 2) { alert('To‘g‘ri ism kiriting!'); return; }
-
-      fetch(SHEET_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: new URLSearchParams({ name, phone: '+998' + phone })
-      }).catch(() => { });
-
-      setTimeout(() => window.location.href = '../success.html', 1200);
+      let phone = phoneInput.value.replace(/\D/g,'');
+      if(phone.startsWith('998')) phone=phone.slice(3);
+      if(phone.length!==9){ alert('Telefon: 9 ta raqam kiriting!'); return; }
+      if(!name || name.length<2){ alert('To‘g‘ri ism kiriting!'); return; }
+      fetch(SHEET_URL,{
+        method:'POST',
+        mode:'no-cors',
+        body: new URLSearchParams({ name, phone:'+998'+phone })
+      });
+      setTimeout(()=>window.location.href='../success.html',1200);
     };
   </script>
-
 </body>
 </html>
-
