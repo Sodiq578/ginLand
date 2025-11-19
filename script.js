@@ -1,107 +1,60 @@
-// ================= TIMER =================
-let minutes = 1;
-let seconds = 59;
-const timerEl = document.getElementById("timer");
+    /* TIMER */
+    let sec = 59, min = 1, timerRunning = true;
+    const timerEl = document.getElementById('timer');
+    const buttons = document.querySelectorAll('.btn');
+    (function updateTimer() {
+      if (!timerRunning) return;
+      timerEl.textContent = `${String(min).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+      if (sec > 0) sec--;
+      else if (min > 0) { min--; sec = 59; }
+      else {
+        timerEl.textContent = "00:00";
+        timerRunning = false;
+        buttons.forEach(b => {
+          b.disabled = true;
+          b.style.opacity = '0.6';
+          b.textContent = "VAQT TUGADI";
+        });
+        return;
+      }
+      setTimeout(updateTimer, 1000);
+    })();
 
-function updateTimer() {
-    let m = String(minutes).padStart(2, '0');
-    let s = String(seconds).padStart(2, '0');
-    timerEl.textContent = `${m}:${s}`;
-
-    if (seconds === 0) {
-        if (minutes === 0) {
-            clearInterval(interval);
-            timerEl.textContent = "00:00";
-            timerEl.style.color = "#999";
-            return;
-        }
-        minutes--;
-        seconds = 59;
-    } else {
-        seconds--;
-    }
-}
-
-const interval = setInterval(updateTimer, 1000);
-updateTimer();
-
-// ================= TELEFON MASK =================
-document.getElementById('userPhone').addEventListener('input', function (e) {
-    let value = e.target.value.replace(/[^\d]/g, '');
-    if (value.startsWith('998')) value = value.substring(3);
-    if (value.length > 9) value = value.substring(0, 9);
-
-    let formatted = '+998';
-    if (value.length > 0) formatted += ' ' + value.substring(0, 2);
-    if (value.length >= 3) formatted += ' ' + value.substring(2, 5);
-    if (value.length >= 6) formatted += ' ' + value.substring(5, 7);
-    if (value.length >= 8) formatted += ' ' + value.substring(7, 9);
-
-    e.target.value = formatted;
-});
-
-// ================= MODAL =================
-function openModal(modalId) {
-    document.getElementById(modalId).style.display = "flex";
-}
-
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = "none";
-}
-
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.onclick = () => openModal('registerModal');
-});
-
-window.onclick = function(event) {
-    document.querySelectorAll('.modal').forEach(modal => {
-        if(event.target === modal) modal.style.display = "none";
-    });
-}
-
-// ================= TELEGRAM =================
-function goToTelegram() {
-    window.location.href = "https://t.me/+XLq4LXLQudxiZmQ6";
-}
-
-// ================= GOOGLE SHEETS =================
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyol0tp71woGCtJma4LD_wnp0epomoAQsE3DGhh6zHgIj_r6ry_YPRpiR6KOSeOqPuC/exec";
-
-function completeRegistration() {
-    const nameInput = document.getElementById('userName');
+    /* PHONE MASK */
     const phoneInput = document.getElementById('userPhone');
-    const name = nameInput.value.trim();
-    let phone = phoneInput.value.replace(/[^\d]/g, '');
-    if(phone.startsWith('998')) phone = phone.substring(3);
-    if(phone.length !== 9 || !/^\d+$/.test(phone)) {
-        alert("Telefon: 9 ta raqam kiriting!");
-        phoneInput.focus();
-        return;
-    }
-    phone = '+998' + phone;
-    if(!name || name.length < 2) {
-        alert("Iltimos, to‘g‘ri ism kiriting!");
-        nameInput.focus();
-        return;
-    }
-
-    closeModal('registerModal');
-    document.getElementById('loadingModal').style.display = "flex";
-
-    const formData = new URLSearchParams();
-    formData.append('name', name);
-    formData.append('phone', phone);
-
-    fetch(WEB_APP_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formData
-    }).then(() => {
-        closeModal('loadingModal');
-        openModal('finalModal');
-    }).catch(err => {
-        console.warn(err);
-        closeModal('loadingModal');
-        openModal('finalModal');
+    phoneInput.addEventListener('input', e => {
+      let v = e.target.value.replace(/\D/g,'');
+      if(v.startsWith('998')) v=v.slice(3);
+      v = v.slice(0,9);
+      let f = '+998';
+      if(v.length>0) f+=' '+v.slice(0,2);
+      if(v.length>2) f+=' '+v.slice(2,5);
+      if(v.length>5) f+=' '+v.slice(5,7);
+      if(v.length>7) f+=' '+v.slice(7,9);
+      e.target.value = f;
     });
-}
+
+    /* MODAL */
+    const modal = document.getElementById('registerModal');
+    buttons.forEach(b => b.onclick = () => {
+      if(!timerRunning){ alert("Vaqt tugadi!"); return; }
+      modal.classList.add('active');
+    });
+
+    /* GOOGLE SHEETS SEND */
+    const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyol0tp71woGCtJma4LD_wnp0epomoAQsE3DGhh6zHgIj_r6ry_YPRpiR6KOSeOqPuC/exec';
+    document.getElementById('submitBtn').onclick = () => {
+      if(!timerRunning){ alert("Vaqt tugadi!"); return; }
+      const name = document.getElementById('userName').value.trim();
+      let phone = phoneInput.value.replace(/\D/g,'');
+      if(phone.startsWith('998')) phone=phone.slice(3);
+      if(phone.length!==9){ alert('Telefon: 9 ta raqam kiriting!'); return; }
+      if(!name || name.length<2){ alert('To‘g‘ri ism kiriting!'); return; }
+      fetch(SHEET_URL,{
+        method:'POST',
+        mode:'no-cors',
+        body: new URLSearchParams({ name, phone:'+998'+phone })
+      });
+      setTimeout(()=>window.location.href='../success.html',1200);
+    };
+  
