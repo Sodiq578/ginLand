@@ -29,7 +29,7 @@ body {
   margin-bottom: 12px;
   color: #000;
 }
-.subtitle { font-weight: 700; font-size: 19px; margin: 8px 0; line-height: 1.5; }
+.subtitle { font-weight: 700;  margin: 8px 0; line-height: 1.5; }
 .subtitle span { color: #d10000; }
 
 .doctor { position: relative; display: inline-block; }
